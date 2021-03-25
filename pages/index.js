@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {SocialIcon} from "react-social-icons";
 
 export default function Home() {
   return (
@@ -30,9 +31,26 @@ export default function Home() {
         </div>
 
         <div className="py-4">
-          <a className="font-medium text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500" href="#">
+          <a className="font-medium text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500" href="mailto:chris@devtachom.com">
             Have an exciting project? Let’s connect ->
           </a>
+          <p className="py-4 flex">
+            <span className="bg-gray-100 rounded-full p-2 mr-4">
+              <SocialIcon url="https://linkedin.com/in/tate2301" />
+            </span>
+            <span className="bg-gray-100 rounded-full p-2 mr-4">
+              <SocialIcon url="https://twitter.com/kamfeskaya" />
+            </span>
+            <span className="bg-gray-100 rounded-full p-2 mr-4">
+              <SocialIcon url="https://github.com/tate2301" />
+            </span>
+            <span className="bg-gray-100 rounded-full p-2 mr-4">
+              <SocialIcon url="https://instagram.com/tate2301" />
+            </span>
+            <span className="bg-gray-100 rounded-full p-2 mr-4">
+              <SocialIcon url="https://wa.me/263784939111" />
+            </span>
+          </p>
         </div>
 
         <div className="pt-8 lg:pt-12">
