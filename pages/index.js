@@ -35,19 +35,19 @@ export default function Home() {
             Have an exciting project? Let’s connect ->
           </a>
           <p className="py-4 flex">
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <SocialIcon url="https://linkedin.com/in/tate2301" />
             </span>
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <SocialIcon url="https://twitter.com/kamfeskaya" />
             </span>
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <SocialIcon url="https://github.com/tate2301" />
             </span>
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <SocialIcon url="https://instagram.com/tate2301" />
             </span>
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <SocialIcon url="https://api.whatsapp.com/send/?phone=263784939111&text&app_absent=0" />
             </span>
           </p>
@@ -55,7 +55,7 @@ export default function Home() {
 
         <div className="pt-8 lg:pt-12">
           <p className="flex flex-wrap">
-            <span className="bg-gray-100 rounded-full p-2 mr-4">
+            <span className="bg-gray-100 rounded-full p-2 mr-2 lg:mr-4">
               <svg className="h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
