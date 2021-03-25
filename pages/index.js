@@ -1,65 +1,53 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="container mx-auto p-4">
+        <div className="py-4">
+          <p className="text-3xl lg:text-6xl font-bold text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500">
+            I’m Tatenda Christopher, a Software Engineer and 
+            Designer based in Zimbabwe. Specializing in creating
+            products for people, on the web and on mobile devices.
+          </p>
+        </div>
+        <div className="py-4 lg:py-12">
+          <p>
+            I am a specialized in developing beautiful, intuitive 
+            interfaces for mobile devices and the big screen. I have worked
+            with a few startups and I am always ready to work on the next big thing.
+          </p>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          <p className="pt-4">
+            I am experienced in React, TailwindCSS, Node JS, PHP, Wordpress, Spring Boot, 
+            SwiftUI and Kotlin for Android. 
+          </p>
+        </div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+        <div className="py-4">
+          <a className="font-medium text-gray-800 text-xl" href="#">
+            Have an exciting project? Let’s connect ->
           </a>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <div className="pt-8 lg:pt-12">
+          <p className="flex space-x-4 text-blue-500">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+            <span>
+              Currently available for freelance or full-time work
+            </span>
+          </p>
+        </div>
+      </main>
     </div>
   )
 }
