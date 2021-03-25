@@ -48,7 +48,7 @@ export default function Home() {
               <SocialIcon url="https://instagram.com/tate2301" />
             </span>
             <span className="bg-gray-100 rounded-full p-2 mr-4">
-              <SocialIcon url="https://wa.me/263784939111" />
+              <SocialIcon url="https://api.whatsapp.com/send/?phone=263784939111&text&app_absent=0" />
             </span>
           </p>
         </div>
