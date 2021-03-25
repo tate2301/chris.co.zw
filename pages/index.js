@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="py-4 lg:py-12">
           <p>
-            I am a specialized in developing beautiful, intuitive 
+            I am specialized in developing beautiful, intuitive 
             interfaces for mobile devices and the big screen. I have worked
             with a few startups and I am always ready to work on the next big thing.
           </p>
