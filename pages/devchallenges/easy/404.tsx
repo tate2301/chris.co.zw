@@ -10,15 +10,18 @@ export default function FourOrFourPage() {
                 <p className="font-medium uppercase">404 not found</p>
             </div>
             <div className="grid grid-cols-2 flex-1 items-center">
-                <div className="col-span-2 lg:col-span-1 flex items-center justify-center">
-                    <img src="/img/guy-stranded.png" alt="A stranded man" className="w-max-md h-48 lg:h-96" />
+                <div className="col-span-2 lg:col-span-1 flex items-center justify-center py-12">
+                    <img src="/img/guy-stranded.png" alt="A stranded man" className="w-max-md h-64 lg:h-96" />
                 </div>
-                <div className="col-span-2 lg:col-span-1 flex flex-col space-y-8 w-max-md">
+                <div className="col-span-2 lg:col-span-1 flex flex-col space-y-8 w-max-md py-12">
                     <p className="text-7xl">
                         I have bad news for you
                     </p>
                     <p className="text-xl">
                         The page you are looking for might be removed or is temporarily unavailable
+                    </p>
+                    <p>
+                        <a href="/devchallenges" className="px-8 py-4 bg-gray-900 text-white uppercase">Back to Homepage</a>
                     </p>
                 </div>
             </div>
