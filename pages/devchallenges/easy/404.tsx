@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function FourOrFourPage() {
     return (
@@ -21,7 +22,9 @@ export default function FourOrFourPage() {
                         The page you are looking for might be removed or is temporarily unavailable
                     </p>
                     <p>
-                        <a href="/devchallenges" className="px-8 py-4 bg-gray-900 text-white uppercase">Back to Homepage</a>
+                        <Link href="/devchallenges">
+                            <a className="px-8 py-4 bg-gray-900 text-white uppercase">Back to Homepage</a>
+                        </Link>
                     </p>
                 </div>
             </div>

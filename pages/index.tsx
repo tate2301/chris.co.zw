@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import {SocialIcon} from "react-social-icons";
+import ProfileCard from '../components/ProfileCard'
+import { request } from '../lib/dato'
 
-export default function Home() {
+export default function Home({profile}) {
   return (
     <div className="text-gray-700">
       <Head>
@@ -10,9 +11,48 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container mx-auto p-4">
-      
+      <main>
+        <ProfileCard profile={profile} />
       </main>
     </div>
   )
+}
+
+const queryProfile = `
+  {
+    profile {
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      description {
+        value
+      },
+      profilePicture {
+        responsiveImage(imgixParams: { auto: format }) {
+          srcSet
+          webpSrcSet
+          sizes
+          src
+          width
+          height
+          aspectRatio
+          alt
+          title
+          base64
+        }
+      }
+    }
+  }
+`
+export const getStaticProps = async () => {
+
+  //@ts-ignore
+  const profile = await request({
+    query: queryProfile,
+  });
+
+  return {
+    props: { profile }
+  };
 }

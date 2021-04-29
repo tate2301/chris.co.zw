@@ -1,0 +1,30 @@
+import { ReactChildren } from "react";
+
+export default function Heading({size, className, children}: HeadingProps) {
+    let textSize;
+    switch (size) {
+        case "xl":
+            textSize = "text-5xl"
+            break;
+        case "lg":
+            textSize = "text-3xl"
+            break;
+        case "md":
+            textSize = "text-2xl"
+            break;
+        default:
+            textSize = "text-5xl"
+            break;
+    }
+    return (
+        <h1 className={`${textSize} ${className} font-bold`}>
+            {children}
+        </h1>
+    )
+}
+
+interface HeadingProps {
+    size?: string;
+    className?: string;
+    children: any;
+}
