@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import LatestPosts from '../components/LatestPosts/LatestPosts'
+import NewsLetter from '../components/NewsLetter/NewsLetter'
+import Roles from '../components/Roles/Roles'
 import { request } from '../lib/dato'
 
-export default function Home({profile, roles}) {
+export default function Home({profile, roles, posts}) {
+  console.log({posts})
   return (
     <div className="text-gray-700">
       <Head>
@@ -11,8 +15,11 @@ export default function Home({profile, roles}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header profile={profile} roles={roles} />
+      <main className="max-w-4xl mx-auto">
+        <Header profile={profile} />
+        <Roles roles={roles} />
+        <LatestPosts posts={posts} />
+        <NewsLetter />
       </main>
     </div>
   )
@@ -52,6 +59,20 @@ const queryRoles = `
       jobPosition,
       jobDescription {
         value
+      },
+      experience
+    }
+  }
+`
+
+const queryPosts = `
+  {
+    allPosts {
+      title,
+      subtitle,
+      slug,
+      text {
+        value
       }
     }
   }
@@ -68,10 +89,16 @@ export const getStaticProps = async () => {
     query: queryRoles
   })
 
+  //@ts-ignore
+  const posts = await request({
+    query: queryPosts
+  })
+
   return {
     props: {
       profile,
-      roles: roles?.allRoles
+      roles: roles?.allRoles,
+      posts: posts?.allPosts
     }
   };
 }

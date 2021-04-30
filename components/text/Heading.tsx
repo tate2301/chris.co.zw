@@ -7,7 +7,7 @@ export default function Heading({size, className, children}: HeadingProps) {
             textSize = "text-3xl md:text-4xl lg:text-5xl"
             break;
         case "lg":
-            textSize = "text-xl md:text-2xl lg:text-3xl"
+            textSize = "text-xl md:text-3xl lg:text-4xl"
             break;
         case "md":
             textSize = "text-lg md:text-xl lg:text-2xl"
