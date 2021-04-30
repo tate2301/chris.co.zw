@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import LatestPosts from '../components/LatestPosts/LatestPosts'
-import NewsLetter from '../components/NewsLetter/NewsLetter'
 import Roles from '../components/Roles/Roles'
 import { request } from '../lib/dato'
 
@@ -19,7 +18,6 @@ export default function Home({profile, roles, posts}) {
         <Header profile={profile} />
         <Roles roles={roles} />
         <LatestPosts posts={posts} />
-        <NewsLetter />
       </main>
     </div>
   )
@@ -70,10 +68,7 @@ const queryPosts = `
     allPosts {
       title,
       subtitle,
-      slug,
-      text {
-        value
-      }
+      slug
     }
   }
 `
