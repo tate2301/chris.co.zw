@@ -11,7 +11,7 @@ export default function Profile({profile}) {
                     <Heading size="xl">
                         I am a Fullstack Engineer🚀
                     </Heading>
-                    <Heading className="w-max my-2 bg-yellow-500 text-white px-2 py-3 rounded-md shadow-md">
+                    <Heading className="w-max my-2 bg-red-500 text-white px-2 py-3 rounded-md shadow-md">
                         building dope tech
                     </Heading>
                 </div>
