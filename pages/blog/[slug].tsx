@@ -14,7 +14,7 @@ export default function BlogPost({data, preview = false}) {
                         "@type": "WebPage",
                         "@id": "https://google.com/data"
                     },
-                    "headline": ${post.title},
+                    "headline": ""+ ${post.title} +"",
                     "datePublished": ${post.createdAt},
                     "dateModified": ${post.updatedAt || post.createdAt},
                     "author": {
@@ -26,6 +26,7 @@ export default function BlogPost({data, preview = false}) {
                         "name": "Tatenda Christopher Chinyamakobvu",
                     }`}} />
                     <title>{post.title}</title>
+                    <meta name="description" content={post.subtitle} />
                 </Head>
                 <div className="my-12 mx-auto prose">
                     <StructuredText data={post.text} />
