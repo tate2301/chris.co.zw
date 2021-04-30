@@ -3,8 +3,7 @@ import Header from '../components/Header'
 import Roles from '../components/Roles/Roles'
 import { request } from '../lib/dato'
 
-export default function Home({profile, roles, posts}) {
-  console.log({posts})
+export default function Home({profile, roles}) {
   return (
     <div className="text-gray-700">
       <Head>
@@ -61,15 +60,6 @@ const queryRoles = `
   }
 `
 
-const queryPosts = `
-  {
-    allPosts {
-      title,
-      subtitle,
-      slug
-    }
-  }
-`
 export const getStaticProps = async () => {
 
   //@ts-ignore
@@ -82,16 +72,10 @@ export const getStaticProps = async () => {
     query: queryRoles
   })
 
-  //@ts-ignore
-  const posts = await request({
-    query: queryPosts
-  })
-
   return {
     props: {
       profile,
       roles: roles?.allRoles,
-      posts: posts?.allPosts
     }
   };
 }

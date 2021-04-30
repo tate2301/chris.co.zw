@@ -1,4 +1,3 @@
-import { ReactChildren } from "react";
 
 export default function Heading({size, className, children}: HeadingProps) {
     let textSize;

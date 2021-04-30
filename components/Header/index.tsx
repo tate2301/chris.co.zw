@@ -1,4 +1,3 @@
-import { Image } from "react-datocms";
 import Profile from "./Profile";
 
 export default function Header({profile}) {
