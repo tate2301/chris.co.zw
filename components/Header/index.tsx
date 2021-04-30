@@ -12,8 +12,8 @@ export default function Header({profile}) {
             <div className="my-16 flex flex-col space-y-2">
                 <Profile profile={myProfile} />
                 <div className="py-4">
-                    <a href="#" className="underline font-bold text-red-500">
-                        Schedule a call with me
+                    <a href="mailto:chris@devtachom" className="underline font-bold text-red-500">
+                        Send me an email
                     </a>
                 </div>
                 <div className="py-1">
