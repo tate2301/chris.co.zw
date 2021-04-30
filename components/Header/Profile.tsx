@@ -5,7 +5,7 @@ export default function Profile({profile}) {
     return(
         <div>
                 <div className="flex flex-col space-y-4">
-                    <p className="font-bold">
+                    <p className="">
                         👋🏾 Hi, I am {profile.firstName} {profile.lastName}
                     </p>
                     <Heading size="xl">

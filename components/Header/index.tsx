@@ -5,7 +5,6 @@ import Roles from "./Roles";
 
 export default function Header({profile, roles}) {
     const { profile: myProfile } = profile
-    console.log(myProfile)
     return (
         <div className="w-full p-4 rounded-xl grid grid-cols-3 md:grid-cols-5 lg:grid-cols-3 gap-12">
             <div className="hidden md:flex col-span-3 md:col-span-5 lg:col-span-3 my-4 rounded-md border-2 border-gray-200 px-4 py-2 text-sm w-max mx-auto ...">
@@ -26,9 +25,12 @@ export default function Header({profile, roles}) {
                         Please check it out :)
                     </p>
                 </div>
+                <div className="py-8">
+                    <Roles roles={roles} />
+                </div>
             </div>
             <div className="col-span-3 md:col-span-2 lg:col-span-1">
-                <Roles roles={roles} />
+                
             </div>
         </div>
     );
