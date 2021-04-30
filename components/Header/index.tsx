@@ -20,8 +20,12 @@ export default function Header({profile, roles}) {
                 </div>
                 <div className="py-1">
                     <p className="text-sm">
-                        By the way, I am a self-appointed ambassador of
-                        <a className="text-red-500 underline" href="https://blitzjs.com/" target="_blank"> Blitzjs</a>.
+                        By the way, I am a self-appointed ambassador of <a
+                            className="font-bold underline"
+                            href="https://blitzjs.com/"
+                            target="_blank">
+                                Blitzjs
+                            </a>.
                         Please check it out :)
                     </p>
                 </div>
@@ -30,7 +34,7 @@ export default function Header({profile, roles}) {
                 </div>
             </div>
             <div className="col-span-3 md:col-span-2 lg:col-span-1">
-                
+                <Image className="w-full my-auto" data={myProfile.profilePicture} />
             </div>
         </div>
     );

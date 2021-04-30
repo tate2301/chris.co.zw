@@ -29,7 +29,7 @@ const queryProfile = `
         value
       },
       profilePicture {
-        responsiveImage(imgixParams: { auto: format }) {
+        responsiveImage(imgixParams: { fit: crop, auto: format }) {
           srcSet
           webpSrcSet
           sizes
