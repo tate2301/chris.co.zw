@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
 import { request } from '../lib/dato'
 
-export default function Home({profile, roles}) {
+export default function Home({profile, roles, posts}) {
   return (
     <div className="text-gray-700">
       <Head>
@@ -15,6 +16,7 @@ export default function Home({profile, roles}) {
       <main className="max-w-4xl mx-auto">
         <Header profile={profile} />
         <Roles roles={roles} />
+        <LatestPosts posts={posts} />
       </main>
     </div>
   )
@@ -60,6 +62,16 @@ const queryRoles = `
   }
 `
 
+const postsQuery = `
+  {
+    allPosts {
+      title,
+      subtitle,
+      slug
+    }
+  }
+`
+
 export const getStaticProps = async () => {
 
   //@ts-ignore
@@ -72,10 +84,16 @@ export const getStaticProps = async () => {
     query: queryRoles
   })
 
+  //@ts-ignore
+  const posts = await request({
+    query: postsQuery
+  })
+
   return {
     props: {
       profile,
       roles: roles?.allRoles,
+      posts: posts?.allPosts
     }
   };
 }

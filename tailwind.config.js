@@ -5,9 +5,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
   },
   plugins: [
-
+    require('@tailwindcss/typography'),
   ],
 }
