@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from '../components/Header'
-import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
 import { request } from '../lib/dato'
 
@@ -17,7 +16,6 @@ export default function Home({profile, roles, posts}) {
       <main className="max-w-4xl mx-auto">
         <Header profile={profile} />
         <Roles roles={roles} />
-        <LatestPosts posts={posts} />
       </main>
     </div>
   )
