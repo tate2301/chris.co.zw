@@ -22,6 +22,7 @@ export default function Header({profile, roles}) {
                     <p className="text-sm">
                         By the way, I am a self-appointed ambassador of <a
                             className="font-bold underline"
+                            rel="noopener"
                             href="https://blitzjs.com/"
                             target="_blank">
                                 Blitzjs
