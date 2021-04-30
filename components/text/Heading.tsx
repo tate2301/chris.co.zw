@@ -4,16 +4,16 @@ export default function Heading({size, className, children}: HeadingProps) {
     let textSize;
     switch (size) {
         case "xl":
-            textSize = "text-5xl"
+            textSize = "text-3xl md:text-4xl lg:text-5xl"
             break;
         case "lg":
-            textSize = "text-3xl"
+            textSize = "text-xl md:text-2xl lg:text-3xl"
             break;
         case "md":
-            textSize = "text-2xl"
+            textSize = "text-lg md:text-xl lg:text-2xl"
             break;
         default:
-            textSize = "text-5xl"
+            textSize = "text-3xl md:text-4xl lg:text-5xl"
             break;
     }
     return (

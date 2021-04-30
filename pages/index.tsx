@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import ProfileCard from '../components/ProfileCard'
+import Header from '../components/Header'
 import { request } from '../lib/dato'
 
-export default function Home({profile}) {
+export default function Home({profile, roles}) {
   return (
     <div className="text-gray-700">
       <Head>
@@ -12,7 +12,7 @@ export default function Home({profile}) {
       </Head>
 
       <main>
-        <ProfileCard profile={profile} />
+        <Header profile={profile} roles={roles} />
       </main>
     </div>
   )
@@ -45,6 +45,17 @@ const queryProfile = `
     }
   }
 `
+
+const queryRoles = `
+  {
+    allRoles {
+      jobPosition,
+      jobDescription {
+        value
+      }
+    }
+  }
+`
 export const getStaticProps = async () => {
 
   //@ts-ignore
@@ -52,7 +63,15 @@ export const getStaticProps = async () => {
     query: queryProfile,
   });
 
+  //@ts-ignore
+  const roles = await request({
+    query: queryRoles
+  })
+
   return {
-    props: { profile }
+    props: {
+      profile,
+      roles: roles?.allRoles
+    }
   };
 }
