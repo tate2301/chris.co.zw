@@ -4,6 +4,8 @@ import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
 import request from '../lib/dato'
 
+export const config = { amp: true };
+
 export default function Home({profile, roles, posts}) {
   return (
     <div className="text-gray-700">

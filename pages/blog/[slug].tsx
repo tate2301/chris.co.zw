@@ -70,4 +70,6 @@ export async function getStaticProps({ params, preview = false, }: any) {
         data: await request(graphqlRequest)
       },
     };
-  }
+}
+
+export const config = { amp: true };
