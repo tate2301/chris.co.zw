@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
-import { request } from '../lib/dato'
+import Header from '../components/Header'
+import LatestPosts from '../components/LatestPosts/LatestPosts'
+import Roles from '../components/Roles/Roles'
+import request from '../lib/dato'
 
 export default function Home({profile, roles, posts}) {
-  const Header = dynamic(() => import("../components/Header"))
-  const LatestPosts = dynamic(() => import("../components/LatestPosts/LatestPosts"))
-  const Roles = dynamic(() => import("../components/Roles/Roles"))
   return (
     <div className="text-gray-700">
       <Head>

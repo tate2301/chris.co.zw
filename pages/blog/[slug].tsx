@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { StructuredText } from "react-datocms";
-import { request } from '../../lib/dato'
+import request from '../../lib/dato'
 
 export default function BlogPost({data, preview = false}) {
     const { post } = data;

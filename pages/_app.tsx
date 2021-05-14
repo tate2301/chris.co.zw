@@ -10,4 +10,13 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
+export const getInitialProps = async ({ Component, ctx }) => {
+  let pageProps;
+  // Ensure getInitialProps gets called on our child pages
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps({ ctx });
+  }
+  return { pageProps };
+}
+
 export default MyApp
