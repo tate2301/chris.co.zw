@@ -72,7 +72,7 @@ const postsQuery = `
   }
 `
 
-export const getStaticProps = async () => {
+export const getInitialProps = async () => {
 
   //@ts-ignore
   const profile = await request({
