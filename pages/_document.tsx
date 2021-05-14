@@ -1,14 +1,27 @@
-import Document, { Html, Head, Main } from 'next/document'
-import { FeaturePolyfills, NextScript } from '@engineerapart/nextscript';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import React from 'react'
 
-const features = [
-    FeaturePolyfills.FETCH, // ensures ES6 fetch is available
-    FeaturePolyfills.CUSTOMEVENT, // ensures custom event is available
-    { // example of how to add any other type of polyfill
-      test: `('entries' in Array.prototype)`,
-      feature: 'Array.prototype.entries',
-    },
-  ];
+class DeferredNextScript extends NextScript {
+    getScripts(files) {
+      return super.getScripts(files).map(script => {
+        return React.cloneElement(script, {
+          key: script.props.src,
+          defer: true,
+          async: false,
+        })
+      })
+    }
+    getDynamicChunks(files) {
+      return super.getDynamicChunks(files).map(script => {
+        return React.cloneElement(script, {
+          key: script.props.src,
+          defer: true,
+          async: false,
+        })
+      })
+    }
+  }
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -21,7 +34,7 @@ class MyDocument extends Document {
         <Head />
         <body>
           <Main />
-          <NextScript features={features} />
+          <DeferredNextScript />
         </body>
       </Html>
     )
