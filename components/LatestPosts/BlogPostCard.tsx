@@ -5,7 +5,7 @@ import Heading from "../text/Heading";
 export default function BlogPostCard({post}) {
     return(
         <Link href={`/blog/${post.slug}`}>
-            <a>
+            <a className="hover:underline">
                 <div className="pb-2 md:pb-0 block md:flex justify-between">
                     <Heading size="md">
                         {post.title}
@@ -14,7 +14,7 @@ export default function BlogPostCard({post}) {
                         {post.timeCreated}
                     </p>
                 </div>
-                <article className="py-2">
+                <article className="text-md">
                     <p className="truncate ... text-gray-500">{post.subtitle}</p>
                 </article>
             </a>
