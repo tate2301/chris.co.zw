@@ -11,7 +11,7 @@ export default function Profile({profile}) {
                     <Heading className="underline" size="xl">
                         I am a Fullstack Engineer🚀
                     </Heading>
-                    <Heading className="w-max mx-auto my-2 bg-red-500 text-white px-2 py-3 rounded-md shadow-md">
+                    <Heading >
                         building dope tech
                     </Heading>
                 </div>

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
-import withDeferRender from '../components/withDeferRendering'
 import request from '../lib/dato'
 
 //export const config = { amp: "hybrid" };
@@ -101,4 +100,4 @@ export const getStaticProps = async () => {
   };
 }
 
-export default withDeferRender(Home)
+export default Home
