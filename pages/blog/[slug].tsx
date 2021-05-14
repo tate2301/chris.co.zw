@@ -72,4 +72,6 @@ export async function getStaticProps({ params, preview = false, }: any) {
     };
 }
 
-export const config = { amp: true };
+export const config = { 
+  amp: true
+};
