@@ -20,7 +20,8 @@ class DeferredNextScript extends NextScript {
         })
       })
     }
-  }
+}
+
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
