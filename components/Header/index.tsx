@@ -1,7 +1,12 @@
 import Profile from "./Profile";
 
 export default function Header({profile}) {
-    const { profile: myProfile } = profile
+    const { profile: myProfile } = profile || {
+        profile: {
+            firstName: "Tatenda Christopher",
+            lastName: "Chinyamakobvu" 
+        }
+    }
     return (
         <div className="w-full p-4 rounded-xl text-center">
             <div className="hidden md:flex col-span-3 md:col-span-5 lg:col-span-3 my-4 rounded-md border-2 border-gray-200 px-4 py-2 text-sm w-max mx-auto ...">

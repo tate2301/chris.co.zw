@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
+import withDeferRender from '../components/withDeferRendering'
 import request from '../lib/dato'
 
-export const config = { amp: true };
+//export const config = { amp: "hybrid" };
 
-export default function Home({profile, roles, posts}) {
+function Home({profile, roles, posts}) {
   return (
     <div className="text-gray-700">
       <Head>
@@ -74,7 +75,7 @@ const postsQuery = `
   }
 `
 
-export const getInitialProps = async () => {
+export const getStaticProps = async () => {
 
   //@ts-ignore
   const profile = await request({
@@ -99,3 +100,5 @@ export const getInitialProps = async () => {
     }
   };
 }
+
+export default withDeferRender(Home)
