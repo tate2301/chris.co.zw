@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import LatestPosts from '../components/LatestPosts/LatestPosts'
 import Roles from '../components/Roles/Roles'
+import DefaultLayout from '../layouts/default'
 import request from '../lib/dato'
 
 //export const config = { amp: "hybrid" };
@@ -15,11 +16,17 @@ function Home({profile, roles, posts}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="max-w-4xl mx-auto">
-        <Header profile={profile} />
-        <Roles roles={roles} />
-        <LatestPosts posts={posts} />
-      </main>
+      <div className="w-full bg-milk">
+        <DefaultLayout>
+          <Header profile={profile} />
+        </DefaultLayout>
+      </div>
+      <DefaultLayout>
+        <div className="container max-w-4xl mx-auto flex-col space-y-12">
+          <Roles roles={roles} />
+          <LatestPosts posts={posts} />
+        </div>
+      </DefaultLayout>
     </div>
   )
 }
@@ -95,7 +102,7 @@ export const getStaticProps = async () => {
     props: {
       profile,
       roles: roles?.allRoles,
-      posts: posts?.allPosts
+      posts: posts?.allPosts?.slice(0, 12)
     }
   };
 }

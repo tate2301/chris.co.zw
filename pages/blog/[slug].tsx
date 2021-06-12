@@ -1,11 +1,13 @@
 import Head from "next/head";
 import { StructuredText } from "react-datocms";
+import Navbar from "../../components/Navbar";
 import request from '../../lib/dato'
 
 export default function BlogPost({data, preview = false}) {
     const { post } = data;
     return (
         <div>
+            <Navbar />
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `{
                     "@context": "https://schema.org",
@@ -28,7 +30,7 @@ export default function BlogPost({data, preview = false}) {
                     <title>{post.title}</title>
                     <meta name="description" content={post.subtitle} />
                 </Head>
-                <div className="my-12 mx-auto prose">
+                <div className="container my-12 mx-auto prose">
                     <StructuredText data={post.text} />
                 </div>
         </div>
