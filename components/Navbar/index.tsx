@@ -29,7 +29,7 @@ export default function Navbar() {
                             Source
                         </a>
                         <a
-                            className="px-4 py-2 bg-gray-900 text-white rounded-full font-bold flex items-center"
+                            className="px-4 py-2 bg-gray-900 text-white rounded-full font-bold items-center hidden md:flex"
                             href="https://twitter.com/kamfeskaya" 
                             rel="no-opener" 
                             target="blank">

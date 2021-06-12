@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { StructuredText } from "react-datocms";
 import Navbar from "../../components/Navbar";
+import DefaultLayout from "../../layouts/default";
 import request from '../../lib/dato'
 
 export default function BlogPost({data, preview = false}) {
@@ -30,9 +31,11 @@ export default function BlogPost({data, preview = false}) {
                     <title>{post.title}</title>
                     <meta name="description" content={post.subtitle} />
                 </Head>
-                <div className="container my-12 mx-auto prose">
-                    <StructuredText data={post.text} />
-                </div>
+                <DefaultLayout>
+                  <div className="my-12 mx-auto prose">
+                      <StructuredText data={post.text} />
+                  </div>
+                </DefaultLayout>
         </div>
     )
 }
